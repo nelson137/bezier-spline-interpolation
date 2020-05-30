@@ -1,7 +1,7 @@
+EXE    := a.out
 SRCS   := $(wildcard *.c)
 BUILD  := build
 OBJS   := $(SRCS:%.c=$(BUILD)/%.o)
-EXE    := a.out
 
 CFLAGS := -Wall -Werror $(shell pkg-config --cflags gtk+-3.0)
 LIBS   := -lm $(shell pkg-config --libs gtk+-3.0)
@@ -13,7 +13,6 @@ MKDIR  := /bin/mkdir -p
 $(EXE): $(OBJS)
 	@echo "$^ -> $@"
 	@$(GCC) $(OBJS) $(LIBS)
-.PHONY: main
 
 $(BUILD)/%.o: %.c | $(BUILD)
 	@echo "$^ -> $@"
