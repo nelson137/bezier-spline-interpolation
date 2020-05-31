@@ -1,6 +1,24 @@
 #include "util.h"
 
 
+void array_insert(double *array, int size, int index, double value) {
+    for (int i=size-2; i>=0; --i) {
+        if (i >= index)
+            array[i+1] = array[i];
+        if (i == index)
+            array[i] = value;
+    }
+}
+
+
+double bezier_func(double p0, double p1, double p2, double p3, double t) {
+    return pow(1.0-t, 3) * p0
+         + 3.0 * (t - 2.0*t*t + t*t*t) * p1
+         + 3.0 * (t*t - t*t*t) * p2
+         + t*t*t * p3;
+}
+
+
 /**
  * Clamp x on the interval [min,max].
  */
@@ -11,6 +29,36 @@ double clamp(double x, double min, double max) {
         return max;
     else
         return x;
+}
+
+
+/**
+ * https://cboard.cprogramming.com/c-programming/155809-find-closest-point-line.html#post1158165
+ */
+void closest_point_on_line(
+    double Ax, double Ay,
+    double Bx, double By,
+    double Px, double Py,
+    double *x, double *y
+) {
+    double APx = Px - Ax;
+    double APy = Py - Ay;
+    double ABx = Bx - Ax;
+    double ABy = By - Ay;
+    double magAB2 = ABx*ABx + ABy*ABy;
+    double ABdotAP = ABx*APx + ABy*APy;
+    double t = ABdotAP / magAB2;
+
+    if (t < 0) {
+        *x = Ax;
+        *y = Ay;
+    } else if (t > 1) {
+        *x = Bx;
+        *y = By;
+    } else {
+        *x = Ax + ABx*t;
+        *y = Ay + ABy*t;
+    }
 }
 
 

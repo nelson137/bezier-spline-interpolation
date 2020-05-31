@@ -40,8 +40,11 @@ gboolean on_motion_notify(GtkWidget *w, GdkEvent *event, gpointer arg) {
  * Callback for mouse button release.
  */
 gboolean on_button_release(GtkWidget *w, GdkEventButton *event, gpointer arg) {
-    if (event->button == GDK_BUTTON_PRIMARY)
+    if (event->button == GDK_BUTTON_PRIMARY) {
         primary_button_down = FALSE;
+        if (has_hover_knot() == FALSE)
+            try_add_knot(event->x, event->y);
+    }
     return TRUE;
 }
 
@@ -61,6 +64,8 @@ gboolean tick_callback(
 
 int main(int argc, char *argv[]) {
     srand(time(NULL));
+
+    init_animation_data();
 
     gtk_init(&argc, &argv);
 
@@ -96,6 +101,8 @@ int main(int argc, char *argv[]) {
     gtk_widget_show_all(window);
 
     gtk_main();
+
+    free_animation_data();
 
     return 0;
 }
