@@ -2,6 +2,9 @@
 #define DRAW_H
 
 
+#include <float.h>
+#include <stdlib.h>
+
 #include <gtk/gtk.h>
 
 #include "util.h"

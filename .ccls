@@ -1,0 +1,34 @@
+%gcc
+%c -std=c11
+%c -Wall
+%c -Werror
+%c -pthread
+
+%c -latk-1.0
+%c -lcairo
+%c -lcairo-gobject
+%c -lgdk-3
+%c -lgdk_pixbuf-2.0
+%c -lgio-2.0
+%c -lglib-2.0
+%c -lgobject-2.0
+%c -lgtk-3
+%c -lm
+%c -lpango-1.0
+%c -lpangocairo-1.0
+
+%c -I/usr/include/at-spi-2.0
+%c -I/usr/include/at-spi2-atk/2.0
+%c -I/usr/include/atk-1.0
+%c -I/usr/include/cairo
+%c -I/usr/include/dbus-1.0
+%c -I/usr/include/freetype2
+%c -I/usr/include/gdk-pixbuf-2.0
+%c -I/usr/include/gio-unix-2.0
+%c -I/usr/include/glib-2.0
+%c -I/usr/include/gtk-3.0
+%c -I/usr/include/harfbuzz
+%c -I/usr/include/libpng16
+%c -I/usr/include/pango-1.0
+%c -I/usr/include/pixman-1
+%c -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
