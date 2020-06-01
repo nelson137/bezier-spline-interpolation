@@ -16,6 +16,8 @@ void init_animation_data();
 
 void free_animation_data();
 
+int get_num_knots();
+
 gboolean has_hover_knot();
 
 void update_hover_knot(double x, double y);

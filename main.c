@@ -10,7 +10,7 @@ static gboolean primary_button_down = FALSE;
 gboolean on_button_press(GtkWidget *w, GdkEventButton *event, gpointer arg) {
     if (event->button == GDK_BUTTON_PRIMARY)
         primary_button_down = TRUE;
-    else if (event->button == GDK_BUTTON_SECONDARY)
+    else if (event->button == GDK_BUTTON_SECONDARY && get_num_knots() > 2)
         try_remove_hover_knot();
     return TRUE;
 }

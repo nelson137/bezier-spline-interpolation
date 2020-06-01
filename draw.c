@@ -56,6 +56,14 @@ void free_animation_data() {
 
 
 /**
+ * Return the number of knots.
+ */
+int get_num_knots() {
+    return n_knots;
+}
+
+
+/**
  * Return whether the cursor is hovering over a knot.
  */
 gboolean has_hover_knot() {
