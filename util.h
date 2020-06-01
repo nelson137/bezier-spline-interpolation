@@ -7,6 +7,8 @@
 
 void array_insert(double *array, int size, int index, double value);
 
+void array_remove(double *array, int size, int index);
+
 double bezier_func(double p0, double p1, double p2, double p3, double t);
 
 double clamp(double x, double min, double max);

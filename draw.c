@@ -94,6 +94,26 @@ void move_hover_knot(double x, double y, double win_width, double win_height) {
 }
 
 
+void try_remove_hover_knot() {
+    if (hover_knot_index < 0 || hover_knot_index > n_knots-1)
+        return;
+
+    array_remove(knots_x, n_knots, hover_knot_index);
+    array_remove(knots_y, n_knots, hover_knot_index);
+
+    --n_knots;
+    --n_segs;
+
+    knots_x = realloc(knots_x, sizeof(double) * n_knots);
+    knots_y = realloc(knots_y, sizeof(double) * n_knots);
+
+    ctrls1_x = realloc(ctrls1_x, sizeof(double) * n_segs);
+    ctrls1_y = realloc(ctrls1_y, sizeof(double) * n_segs);
+    ctrls2_x = realloc(ctrls2_x, sizeof(double) * n_segs);
+    ctrls2_y = realloc(ctrls2_y, sizeof(double) * n_segs);
+}
+
+
 /**
  * Insert knot (x,y) into knots_x and knots_y at index.
  */

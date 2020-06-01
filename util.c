@@ -11,6 +11,13 @@ void array_insert(double *array, int size, int index, double value) {
 }
 
 
+void array_remove(double *array, int size, int index) {
+    for (int i=0; i<size-1; ++i)
+        if (i >= index)
+            array[i] = array[i+1];
+}
+
+
 double bezier_func(double p0, double p1, double p2, double p3, double t) {
     return pow(1.0-t, 3) * p0
          + 3.0 * (t - 2.0*t*t + t*t*t) * p1

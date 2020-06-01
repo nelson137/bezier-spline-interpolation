@@ -22,6 +22,8 @@ void update_hover_knot(double x, double y);
 
 void move_hover_knot(double x, double y, double win_width, double win_height);
 
+void try_remove_hover_knot();
+
 int try_add_knot(double x, double y);
 
 gboolean draw(GtkWidget *widget, cairo_t *cr, gpointer arg);
