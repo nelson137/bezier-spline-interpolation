@@ -10,17 +10,17 @@ GCC    := /usr/bin/gcc
 RM     := /bin/rm -rf
 MKDIR  := /bin/mkdir -p
 
-$(EXE): $(OBJS)
+build/$(EXE): $(OBJS)
 	@echo "$^ -> $@"
-	@$(GCC) $(OBJS) $(LIBS)
+	@$(GCC) -o $@ $(OBJS) $(LIBS)
 
 $(BUILD)/%.o: %.c | $(BUILD)
 	@echo "$^ -> $@"
-	@$(GCC) -c $(CFLAGS) $< -o $@
+	@$(GCC) -c -o $@ $(CFLAGS) $<
 
 $(BUILD):
 	@$(MKDIR) $@
 
 clean:
-	$(RM) $(BUILD) a.out
+	$(RM) $(BUILD)
 .PHONY: clean
