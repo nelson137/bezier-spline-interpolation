@@ -1,0 +1,41 @@
+{
+  "version": 4,
+  "env": {
+    "projectPaths": ["${workspaceFolder}/**"]
+  },
+  "configurations": [
+    {
+      "name": "Linux",
+      "intelliSenseMode": "linux-gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "c11",
+      "cppStandard": "c++11",
+      "defines": [],
+      "includePath": [
+        "${projectPaths}",
+        "/usr/include/**",
+        "/usr/lib/x86_64-linux-gnu/**"
+      ],
+      "browse": {
+        "path": [
+          "${projectPaths}",
+          "/usr/include/**",
+          "/usr/lib/x86_64-linux-gnu/**"
+        ]
+      }
+    },
+    {
+      "name": "Mac",
+      "intelliSenseMode": "macos-gcc-arm64",
+      "compilerPath": "/opt/homebrew/bin/gcc-11",
+      "cStandard": "c11",
+      "cppStandard": "c++11",
+      "defines": [],
+      "macFrameworkPath": [],
+      "includePath": ["${projectPaths}", "/opt/homebrew/Cellar/**"],
+      "browse": {
+        "path": ["${projectPaths}", "/opt/homebrew/Cellar/**"]
+      }
+    }
+  ]
+}
