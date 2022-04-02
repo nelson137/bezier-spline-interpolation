@@ -12,8 +12,9 @@ static rgb_t seg_colors[] = {
 
 static int n_colors = sizeof(seg_colors) / sizeof(seg_colors[0]);
 
-#define KNOT_RADIUS 16
+#define KNOT_DOT_RADIUS 16
 #define KNOT_BORDER_WIDTH 6
+#define KNOT_RADIUS (KNOT_DOT_RADIUS + KNOT_BORDER_WIDTH / 2)
 #define SEG_LINE_WIDTH 8
 
 void init_animation_data()
@@ -301,7 +302,7 @@ void draw(
     {
         cairo_new_sub_path(cr);
 
-        cairo_arc(cr, knots_x[i], knots_y[i], KNOT_RADIUS, 0, 2 * G_PI);
+        cairo_arc(cr, knots_x[i], knots_y[i], KNOT_DOT_RADIUS, 0, 2 * G_PI);
 
         cairo_set_source_rgb(cr, 1, .84, 0);
         cairo_fill_preserve(cr);
