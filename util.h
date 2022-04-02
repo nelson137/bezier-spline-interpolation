@@ -21,6 +21,6 @@ void closest_point_on_line(
 
 double distance(double x1, double y1, double x2, double y2);
 
-int elapsed_ms(struct timeval *a, struct timeval *b);
+double elapsed_ms(struct timeval *a, struct timeval *b);
 
 #endif

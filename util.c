@@ -87,9 +87,9 @@ double distance(double x1, double y1, double x2, double y2)
 /**
  * Return the difference between times `a` and `b` in milliseconds.
  */
-int elapsed_ms(struct timeval *a, struct timeval *b)
+double elapsed_ms(struct timeval *a, struct timeval *b)
 {
-    int elapsed = 1000 * ((int)b->tv_sec - (int)a->tv_sec);
-    elapsed += 0.001 * ((int)b->tv_usec - (int)a->tv_usec);
+    int elapsed = 1000.0 * ((double)b->tv_sec - (double)a->tv_sec);
+    elapsed += 0.001 * ((double)b->tv_usec - (double)a->tv_usec);
     return elapsed;
 }

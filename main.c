@@ -7,7 +7,7 @@ static int WIDTH = 1024;
 static int HEIGHT = 600;
 
 // Thresholds for distinguishing a Simple Click from a Click & Drag
-#define MAX_CLICK_DURATION_MS 450
+#define MAX_CLICK_DURATION_MS 450.0
 #define MAX_CLICK_DIST_DELTA 4.0
 
 // Primary click data for adding a knot
