@@ -12,8 +12,8 @@ static rgb_t seg_colors[] = {
 
 static int n_colors = sizeof(seg_colors) / sizeof(seg_colors[0]);
 
-#define KNOT_DOT_RADIUS 16
-#define KNOT_BORDER_WIDTH 6
+#define KNOT_DOT_RADIUS 14
+#define KNOT_BORDER_WIDTH 4
 #define KNOT_RADIUS (KNOT_DOT_RADIUS + KNOT_BORDER_WIDTH / 2)
 #define SEG_LINE_WIDTH 8
 
