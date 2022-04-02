@@ -3,8 +3,8 @@ SRCS   := $(wildcard *.c)
 BUILD  := build
 OBJS   := $(SRCS:%.c=$(BUILD)/%.o)
 
-CFLAGS := -Wall -Werror $(shell pkg-config --cflags gtk+-3.0)
-LIBS   := -lm $(shell pkg-config --libs gtk+-3.0)
+CFLAGS := -Wall -Werror $(shell pkg-config --cflags gtk4)
+LIBS   := -lm $(shell pkg-config --libs gtk4)
 
 GCC    := /usr/bin/gcc
 RM     := /bin/rm -rf

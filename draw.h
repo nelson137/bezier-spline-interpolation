@@ -1,7 +1,6 @@
 #ifndef DRAW_H
 #define DRAW_H
 
-
 #include <float.h>
 #include <stdlib.h>
 
@@ -9,29 +8,35 @@
 
 #include "util.h"
 
-
-typedef struct {
+typedef struct
+{
     double r, g, b;
 } rgb_t;
-
 
 void init_animation_data();
 
 void free_animation_data();
 
+int get_knot_index_at(double x, double y);
+
 int get_num_knots();
 
-gboolean has_hover_knot();
+void move_knot(
+    int index,
+    double x,
+    double y,
+    double win_width,
+    double win_height);
 
-void update_hover_knot(double x, double y);
+void try_remove_knot(int index);
 
-void move_hover_knot(double x, double y, double win_width, double win_height);
+int try_add_knot_at(double x, double y);
 
-void try_remove_hover_knot();
-
-int try_add_knot(double x, double y);
-
-gboolean draw(GtkWidget *widget, cairo_t *cr, gpointer arg);
-
+void draw(
+    GtkDrawingArea *widget,
+    cairo_t *cr,
+    int width,
+    int height,
+    gpointer arg);
 
 #endif
